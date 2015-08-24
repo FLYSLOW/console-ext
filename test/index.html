@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Console Extension Test</title>
+<script>
+console.log('before extension, only received by original console.');
+</script>
+<script src="../release/console-ext.js"></script>
+<script>
+// add console extension
+var extensionId = console.__ext__.add({
+    log: function() {
+        var div = document.createElement('div');
+        var html = '';
+        [].forEach.call(arguments, function(arg) {
+            html += arg.toString() + ' ';
+        });
+        div.innerHTML = html;
+        document.body.appendChild(div);
+    }
+});
+</script>
+</head>
+<body>
+<script>
+console.log('after extension, received by original console and extension.');
+// modify console
+window.console = {};
+</script>
+<script>
+window.addEventListener('load', function() {
+    var t = 0;
+    var interval = setInterval(function() {
+        if (t >= 20) {
+            clearInterval(interval);
+            return;
+        }
+        if (t % 2 === 0) {
+            console.log = function() {};
+        } else {
+            console.log('%ds', t);
+        }
+        t++;
+    }, 1000);
+});
+</script>    
+</body>
+</html>

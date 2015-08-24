@@ -1,0 +1,32 @@
+{
+  "name": "console-ext",
+  "version": "0.0.1",
+  "description": "Console extension for browser developer tools.",
+  "main": "release/console-ext.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FLYSLOW/console-ext.git"
+  },
+  "keywords": [
+    "console",
+    "extension"
+  ],
+  "author": "FLYSLOW <xufayfly@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FLYSLOW/console-ext/issues"
+  },
+  "homepage": "https://github.com/FLYSLOW/console-ext",
+  "devDependencies": {
+    "cool-reporter": "^0.1.51",
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^1.1.1"
+  }
+}
